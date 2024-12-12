@@ -214,6 +214,11 @@ runs:
                   SOURCE="Hard-coded"
               fi
 
+              if [ "$VAR" == "AZURE_PRINCIPAL_ID" ]; then
+                  VALUE=$principalId
+                  SOURCE="Hard-coded"
+              fi
+
               # Export the variable to the current environment
               export $VAR=$VALUE
               echo "$VAR: $VALUE (from $SOURCE)"
@@ -237,6 +242,12 @@ runs:
                 VALUE='ServicePrincipal'
                 SOURCE="Hard-coded"
             fi
+            
+            if [ "$VAR" == "AZURE_PRINCIPAL_ID" ]; then
+                  VALUE=$principalId
+                  SOURCE="Hard-coded"
+            fi
+
             # Export the variable to the current environment
             export $VAR=$VALUE
             echo "$VAR: $VALUE (from $SOURCE)"
